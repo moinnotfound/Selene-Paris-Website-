@@ -1,0 +1,6 @@
+{
+  "name": "SÉLÈNE Luxury Personal Care",
+  "description": "An ultra-premium personal care brand portal celebrating physical density and daily refinement rituals - toothbrushes, paste, handmade soap, and candles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
