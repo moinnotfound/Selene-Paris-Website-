@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, CSSProperties } from "react";
 import { Product, CartItem } from "./types";
 import { PRODUCTS, HERO_STILL_LIFE_IMAGE, BRAND_PHILOSOPHY, PRESS_MENTIONS } from "./data";
 import { ShoppingBag, ArrowRight, CornerRightDown, Mail, Heart, Check } from "lucide-react";
@@ -41,6 +41,19 @@ export default function App() {
   // Newsletter state
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSuccess, setNewsletterSuccess] = useState(false);
+
+  // Luxury Background Atmosphere Swapper (Green, Purple, Textures Blend)
+  const [atmosphere, setAtmosphere] = useState<"emerald-plum" | "forest-malachite" | "royal-amethyst">("emerald-plum");
+
+  const atmosphereVars = {
+    "--brand-bg": atmosphere === "emerald-plum" ? "#0A0E0B" : atmosphere === "forest-malachite" ? "#08100C" : "#0D0714",
+    "--brand-smoke": atmosphere === "emerald-plum" ? "#150C1B" : atmosphere === "forest-malachite" ? "#112217" : "#1B0A25",
+    "--brand-chalk": atmosphere === "emerald-plum" ? "#102116" : atmosphere === "forest-malachite" ? "#1B3324" : "#311442",
+    "--brand-noir": atmosphere === "emerald-plum" ? "#FAF7F2" : atmosphere === "forest-malachite" ? "#FAF4EB" : "#FAF3FE",
+    "--brand-stone": atmosphere === "emerald-plum" ? "#A49D94" : atmosphere === "forest-malachite" ? "#92978F" : "#AA9EAE",
+    "--brand-gold": atmosphere === "emerald-plum" ? "#DAB675" : atmosphere === "forest-malachite" ? "#C29F5C" : "#D4AF37",
+    "--brand-forest": atmosphere === "emerald-plum" ? "#1F3D27" : atmosphere === "forest-malachite" ? "#2B5637" : "#63397F",
+  } as React.CSSProperties;
 
   // Trigger scroll to top on tab swap
   useEffect(() => {
@@ -95,7 +108,40 @@ export default function App() {
   const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-noir font-sans relative overflow-x-hidden selection:bg-brand-gold/30">
+    <div 
+      className="min-h-screen bg-brand-bg text-brand-noir font-sans relative overflow-x-hidden selection:bg-brand-gold/30 transition-all duration-1000 ease-in-out premium-weave"
+      style={atmosphereVars}
+    >
+      
+      {/* Dynamic luxury atmospheric background glow spots */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" style={{ minHeight: "100%" }}>
+        <div 
+          className="absolute top-12 -left-[20%] w-[90vw] h-[90vw] rounded-full blur-[130px] opacity-35 mix-blend-screen transition-all duration-1000"
+          style={{
+            background: atmosphere === "forest-malachite" 
+              ? "radial-gradient(circle, #2B5637 0%, transparent 70%)" 
+              : atmosphere === "royal-amethyst" 
+              ? "radial-gradient(circle, #4F2F6C 0%, transparent 70%)" 
+              : "radial-gradient(circle, #1A3E26 0%, transparent 70%)"
+          }}
+        />
+        <div 
+          className="absolute top-[40vh] -right-[15%] w-[80vw] h-[80vw] rounded-full blur-[140px] opacity-30 mix-blend-screen transition-all duration-1000"
+          style={{
+            background: atmosphere === "forest-malachite" 
+              ? "radial-gradient(circle, #102B1D 0%, transparent 70%)" 
+              : atmosphere === "royal-amethyst" 
+              ? "radial-gradient(circle, #2C163C 0%, transparent 70%)" 
+              : "radial-gradient(circle, #391B4C 0%, transparent 70%)"
+          }}
+        />
+        <div 
+          className="absolute bottom-[20vh] left-[10vw] w-[60vw] h-[60vw] rounded-full blur-[160px] opacity-15 mix-blend-screen transition-all duration-1000"
+          style={{
+            background: "radial-gradient(circle, var(--brand-gold) 0%, transparent 75%)"
+          }}
+        />
+      </div>
       
       {/* 1. Hermes Inspired Curtain Loader on Mount */}
       <CurtainLoader />
@@ -170,7 +216,48 @@ export default function App() {
           </nav>
 
           {/* Cart Icon trigger with pulse notification */}
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4 md:space-x-6">
+            
+            {/* Ambient Atmosphere Swatches */}
+            <div className="flex items-center space-x-1.5 md:space-x-2 border border-brand-stone/15 bg-brand-smoke/25 px-2.5 py-1.5 rounded-full select-none">
+              <span className="hidden sm:inline font-sans text-[0.52rem] uppercase tracking-widest text-brand-stone mr-1">
+                Atmosphere:
+              </span>
+              <button
+                onClick={() => setAtmosphere("emerald-plum")}
+                className={`w-3.5 h-3.5 rounded-full border transition-all duration-300 relative flex items-center justify-center ${
+                  atmosphere === "emerald-plum"
+                    ? "border-brand-gold scale-110"
+                    : "border-transparent opacity-50 hover:opacity-100"
+                }`}
+                title="L'Alliance (Deep Green / Violet Blend)"
+              >
+                <span className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-600 to-indigo-700" />
+              </button>
+              <button
+                onClick={() => setAtmosphere("forest-malachite")}
+                className={`w-3.5 h-3.5 rounded-full border transition-all duration-300 relative flex items-center justify-center ${
+                  atmosphere === "forest-malachite"
+                    ? "border-brand-gold scale-110"
+                    : "border-transparent opacity-50 hover:opacity-100"
+                }`}
+                title="Malachite (Sovereign Pine Forest Green)"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-600" />
+              </button>
+              <button
+                onClick={() => setAtmosphere("royal-amethyst")}
+                className={`w-3.5 h-3.5 rounded-full border transition-all duration-300 relative flex items-center justify-center ${
+                  atmosphere === "royal-amethyst"
+                    ? "border-brand-gold scale-110"
+                    : "border-transparent opacity-50 hover:opacity-100"
+                }`}
+                title="Améthyste (Imperial Purple)"
+              >
+                <span className="w-2 h-2 rounded-full bg-purple-600" />
+              </button>
+            </div>
+
             <button
               onClick={() => setIsCartOpen(true)}
               className={`relative p-2.5 rounded-full border border-brand-stone/10 hover:border-brand-gold transition-all duration-300 flex items-center justify-center bg-brand-chalk/20 backdrop-blur-xs ${
