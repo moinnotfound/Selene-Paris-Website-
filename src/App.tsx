@@ -341,7 +341,7 @@ export default function App() {
                   <img
                     src="/src/assets/images/selene_toothbrush_1782103208011.jpg"
                     alt="Sélène Toothbrush Still Life"
-                    className="w-full h-full object-contain mix-blend-multiply filter drop-shadow-xl select-none"
+                    className="w-full h-full object-contain filter drop-shadow-xl select-none"
                     referrerPolicy="no-referrer"
                   />
                   
@@ -459,7 +459,7 @@ export default function App() {
                     <img
                       src={HERO_STILL_LIFE_IMAGE}
                       alt="The Complete Still Life curation"
-                      className="w-full h-full object-cover mix-blend-multiply"
+                      className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                     />
                   </div>
@@ -593,7 +593,7 @@ export default function App() {
                     <img
                       src="/src/assets/images/selene_hero_1782103267922.jpg"
                       alt="Artisan hands carving bone element loop placeholder"
-                      className="w-full h-full object-cover mix-blend-multiply opacity-80"
+                      className="w-full h-full object-cover opacity-85"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-brand-gold/10 animate-pulse pointer-events-none" />

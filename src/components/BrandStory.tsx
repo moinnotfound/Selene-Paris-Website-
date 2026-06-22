@@ -52,7 +52,7 @@ export default function BrandStory() {
             <img
               src="/src/assets/images/selene_toothbrush_1782103208011.jpg"
               alt="Sculpting natural bone frames"
-              className="w-full h-full object-cover mix-blend-multiply hover:scale-105 transition-transform duration-800"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-800"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -105,7 +105,7 @@ export default function BrandStory() {
             <img
               src="/src/assets/images/selene_soap_1782103236712.jpg"
               alt="Raw travertine block curing"
-              className="w-full h-full object-cover mix-blend-multiply hover:scale-105 transition-transform duration-800"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-800"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -262,7 +262,7 @@ export default function BrandStory() {
                 <img
                   src="/src/assets/images/selene_hero_1782103267922.jpg"
                   alt="Process Cinematography background"
-                  className="absolute inset-0 w-full h-full object-cover opacity-45 mix-blend-multiply"
+                  className="absolute inset-0 w-full h-full object-cover opacity-45"
                   referrerPolicy="no-referrer"
                 />
 

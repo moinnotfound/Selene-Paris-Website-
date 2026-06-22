@@ -205,7 +205,7 @@ export default function ProductDetailModal({
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full object-contain mix-blend-multiply drop-shadow-xl"
+                className="w-full h-full object-contain drop-shadow-xl"
                 referrerPolicy="no-referrer"
               />
               
@@ -427,7 +427,7 @@ export default function ProductDetailModal({
                       <img
                         src={candidate.image}
                         alt={candidate.name}
-                        className="w-full h-full object-cover mix-blend-multiply"
+                        className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
                       />
                     </div>

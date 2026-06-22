@@ -85,7 +85,7 @@ export default function CartSidebar({
                   <img
                     src={item.product.image}
                     alt={item.product.name}
-                    className="w-full h-full object-cover mix-blend-multiply"
+                    className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
                 </div>

@@ -49,7 +49,7 @@ export default function ProductCard({ product, onSelect, onAddToCart }: ProductC
             filter: isHovered ? "brightness(1.03)" : "brightness(1)",
             transition: "filter 0.4s ease-out",
           }}
-          className="w-full h-full object-cover mix-blend-multiply"
+          className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
 

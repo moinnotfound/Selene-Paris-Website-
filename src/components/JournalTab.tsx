@@ -48,7 +48,7 @@ export default function JournalTab({ onSelectProductById }: JournalTabProps) {
                     <img
                       src={article.image}
                       alt={article.title}
-                      className="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-800"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-800"
                       referrerPolicy="no-referrer"
                     />
                     
